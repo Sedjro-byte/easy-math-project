@@ -60,9 +60,7 @@ main{
 }
 
 .own a{
-    position: relative;
-    border: inset 30px;
-    text-emphasis-color: green;
+        text-justify: auto;
     
 }
 
