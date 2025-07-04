@@ -59,6 +59,10 @@ main{
     text-decoration: rgb(43, 226, 104);
 }
 
-.websiteslink a{
+.own a{
+    position: relative;
+    border: inset 30px;
+    text-emphasis-color: green;
     
 }
+
