@@ -17,6 +17,48 @@ h2{
     /* margin: 50px; */
 }
 
+header {
+    background: linear-gradient(45deg, red, yellow, green, blue);
+    /* border: dashed 10px; */
+    width: 90%;
+    padding: 10px;
+    left:3%;
+    /* right: 5%; */
+    height: 100px;
+    position:  fixed;
+    top:0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    border: outset 5px;
+}
+header img{
+    width: 90px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 85%;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    
+} 
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif ;
+    color: blue;
+    font-weight: bold;
+    
+}
+
 .summary{
     background: linear-gradient(45deg, red, yellow, green, blue);
     border-top: dashed 10px;
@@ -47,4 +89,5 @@ h2{
 }
 body{
     background: #333;
+    padding-top: 200px;
 }

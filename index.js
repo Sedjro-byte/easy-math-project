@@ -2,7 +2,6 @@
 
 
 
-    const video1 = document.getElementById("myVideo1");
 
     function playPause() {
         if (video1.paused) {
@@ -111,7 +110,14 @@
     }
 
 
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
+document.addEventListener("DOMContentLoaded", function(){
+    const video1 = document.getElementById("myVideo1");
+
+    const copyRightP = document.querySelector(".year");
+    copyRightP.textContent = new Date().getFullYear();
+
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", function(event) {
         event.preventDefault();
         
         const name = document.getElementById("name").value;
@@ -145,4 +151,7 @@
         document.getElementById("contactForm").reset();
         alert("Votre message a été envoyé !");
       });
+})
+    
       
+
