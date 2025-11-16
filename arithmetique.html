@@ -1,196 +1,162 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="arithmetique.css">
-        <link rel="icon" href="logo1.bmp">
-        
-    </head>
-    <body>
-        
-        <title>Arithmetic</title>
-            
-       
-            <script type="text/javascript" src="arithmetique.js"></script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyMath Teens – Arithmétique</title>
+  <link rel="icon" href="logo1.bmp">
+  <link rel="stylesheet" href="arithmetique.css">
+  <script src="arithmetique.js" defer></script>
+</head>
 
-        <header>
-            <h1> EasyMath Teens</h1>
-            <img src="logo.jpg" alt="logo">
-            <nav>
-                    <ul>
-                        <li><a href="arithmetique.html">Arithmetic</a></li>
-                        <li><a href="airevolume.html">Aires volumes</a></li>
-                        <li><a href="nombrecomplexe.html">Nombre complexe</a></li>
-                        <li><a href="statistic.html">Statistic</a></li>
-                        <li><a href="trans.html">Transformation</a></li>                 
-                        <li><a href="apropos.html">Contact</a></li>
-                        <li><a href="calculatrice.html">Calculatrice</a></li>
-                    </ul>
-                </nav>
+<body>
+  <!-- 🧭 HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="EasyMath logo">
+      <h1>EasyMath Teens</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="arithmetique.html" class="active">Arithmetic</a></li>
+        <li><a href="airevolume.html">Aires & Volumes</a></li>
+        <li><a href="nombrecomplexe.html">Complex Numbers</a></li>
+        <li><a href="statistic.html">Statistics</a></li>
+        <li><a href="trans.html">Geometry</a></li>
+        <li><a href="calculatrice.html">Calculator</a></li>
+        <li><a href="apropos.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        </header>
-        
-            <section class="title"><h1>Arithmetic</h1></section>
-        
-            <section class="summary">
-                <section>
-                    <h1>Arithmetic Course Summary:</h1>      <br>
-                    <a href="resumAR.pdf">Arithmetic Course Summary</a> <br> <br> <br>
-                    <a href="https://maths-france.fr/wp-content/uploads/Arithmetique_fiche.pdf">Arithmetic Course Summary</a> <br> <br> <br>
-                </section>
-            </section>
-            
+  <!-- 🎯 TITRE -->
+  <section class="hero">
+    <h2>Chapitre : Arithmétique</h2>
+    <p>Explore les fondements des mathématiques : factorielles, congruences, équations diophantiennes et bien plus.</p>
+  </section>
 
+  <!-- 📘 SOMMAIRE -->
+  <section class="summary">
+    <h3>📄 Résumé du cours</h3>
+    <a href="resumAR.pdf" target="_blank" class="btn">Télécharger le résumé (PDF)</a>
+    <a href="https://maths-france.fr/wp-content/uploads/Arithmetique_fiche.pdf" target="_blank" class="btn secondary">Fiche complémentaire</a>
+  </section>
 
+  <!-- ⚙️ CALCULATEURS -->
+  <main class="calculators">
+    <h2>🧮 Exercices interactifs</h2>
+    <p class="intro">Choisis une fonction ci-dessous pour expérimenter et pratiquer tes calculs !</p>
 
-        <section class="solution">
-    <section>
-        1- <a href="#v1">Factorial</a><br/>
-        2- <a href="#v2">Permutation</a><br/>
-        3- <a href="#v3">Combination</a><br/>
-        4- <a href="#v4">Congruence</a><br/>
-        5- <a href="#v5">GCD and LCM</a><br/>
-        6- <a href="#v6">Prime Number Verification</a><br/>
-        7- <a href="#v7">Divisors of a Number</a><br/>
-        8- <a href="#v8">Common Divisors of Two Numbers</a><br/>
-        9- <a href="#v9">Euclidean Division</a><br/>
-        10- <a href="#v10">Diophantine Equation ax+by=1</a><br/>
-        11- <a href="#v11">Diophantine Equation ax+by=c</a><br/>
-        12- <a href="#v12">Ecriture dans une base n </a><br/>
-    </section>
+    <!-- Exemple de carte -->
+    <div class="grid">
+      <div class="card" id="v1">
+        <h3>Factorial</h3>
+        <p>Calcule le factoriel d’un nombre.</p>
+        <input type="number" id="n" placeholder="Entrer un nombre">
+        <button onclick="find_factorial()">Calculer</button>
+        <p class="result">Résultat : <span id="fac"></span></p>
+      </div>
 
-    <section>
-        <h2 id="v1">Factorial</h2>
-        <p>Let's calculate the factorial of a</p><br>
-        a <input type="number" id="n" size="20"><br>
-        <button onclick="find_factorial()">Factorial</button>
-        <p>The factorial is: <span id="fac"></span></p>
-    </section>
+      <div class="card" id="v2">
+        <h3>Permutation</h3>
+        <p>Calcule la permutation de a dans p.</p>
+        <input type="number" id="n1" placeholder="a">
+        <input type="number" id="p" placeholder="p">
+        <button onclick="find_permutation()">Calculer</button>
+        <p class="result">Résultat : <span id="arrag"></span></p>
+      </div>
 
-    <section>
-        <h2 id="v2">Permutation</h2>
-        <p>Let's calculate the permutation of a in p</p><br>
-        a <input type="number" id="n1" size="20"><br>
-        p <input type="number" id="p" size="20"><br>
-        <button onclick="find_permutation()">Permutation</button>
-        <p>The permutation of a in p is: <span id="arrag"></span></p>
-    </section>
+      <div class="card" id="v3">
+        <h3>Combination</h3>
+        <p>Calcule la combinaison de a dans p.</p>
+        <input type="number" id="n2" placeholder="a">
+        <input type="number" id="p1" placeholder="p">
+        <button onclick="find_combination()">Calculer</button>
+        <p class="result">Résultat : <span id="combi"></span></p>
+      </div>
 
+      <div class="card" id="v4">
+        <h3>Congruence</h3>
+        <p>Calcule la congruence de b modulo n.</p>
+        <input type="number" id="a00" placeholder="b">
+        <input type="number" id="b00" placeholder="n">
+        <button onclick="find_congruence()">Calculer</button>
+        <p class="result"><span id="c00"></span></p>
+      </div>
 
+      <div class="card" id="v5">
+        <h3>GCD & LCM</h3>
+        <p>Calcule le PGCD et le PPCM de deux nombres.</p>
+        <input type="number" id="a" placeholder="a">
+        <input type="number" id="b" placeholder="b">
+        <button onclick="calculate_gcd_lcm()">Calculer</button>
+        <p>PGCD : <span id="d"></span></p>
+        <p>PPCM : <span id="e"></span></p>
+      </div>
 
-        <section>
-            <h2 id="v3">Combination</h2>
-            <p>Calculate the combination of a in p</p><br>
-            a <input type="number" id="n2" size="20"><br>
-            p <input type="number" id="p1" size="20"><br>
-            <button onclick="find_combination()">Combination</button>
-            <p>The combination of a in p is: <span id="combi"></span></p>
-        </section>
+      <div class="card" id="v6">
+        <h3>Prime Number Verification</h3>
+        <input type="number" id="r" placeholder="Entrer un nombre">
+        <button onclick="verify_prime()">Vérifier</button>
+        <p><span id="result"></span></p>
+      </div>
 
-        <section>
-            <h2 id="v4">Congruence</h2>
-            <p>Congruence de b modulo n</p><br>
-            b <input type="number" id="a00" size="20"><br>
-            n <input type="number" id="b00" size="20"><br>
-            <button onclick="find_congruence()">Result</button>
-            <p> <span id="c00"></span></p>
-        </section>
+      <div class="card" id="v7">
+        <h3>Divisors of a Number</h3>
+        <input type="number" id="n0" placeholder="Entrer n">
+        <button onclick="find_divisors()">Afficher</button>
+        <p id="answer"></p>
+      </div>
 
+      <div class="card" id="v8">
+        <h3>Common Divisors of Two Numbers</h3>
+        <input type="number" id="a1" placeholder="a1">
+        <input type="number" id="a2" placeholder="a2">
+        <button onclick="commundivisors()">Afficher</button>
+        <p id="answer1"></p>
+      </div>
 
-        <section>
-            <h2 id="v5">Calculate GCD (a,b) and LCM(a,b)</h2>
-            a <input type="number" id="a" size="20"/><br>
-            b <input type="number" id="b" size="20"/><br>
-            <button onclick="calculate_gcd_lcm()">Calculate</button><br>
-            <p> GCD(a,b) is: <span id="d"></span></p><br>
-            <p>LCM(a,b) is: <span id="e"></span></p><br>
-        </section>
+      <div class="card" id="v9">
+        <h3>Euclidean Division</h3>
+        <input type="number" id="a3" placeholder="a3">
+        <input type="number" id="a4" placeholder="a4">
+        <button onclick="euclidean_division()">Calculer</button>
+        <p>Reste : <span id="a6"></span></p>
+        <p>Quotient : <span id="a7"></span></p>
+      </div>
 
-        <section>
-            <h2 id="v6">Prime Number Verification</h2>
-            r <input type="number" id="r" size="20"><br>
-            <button onclick="verify_prime()">Verification</button>
-            <p>Your number <span id="result"></span></p>
-        </section>
+      <div class="card" id="v10">
+        <h3>Diophantine Equation (ax + by = 1)</h3>
+        <input type="number" id="a9" placeholder="a">
+        <input type="number" id="a10" placeholder="b">
+        <button onclick="find_diophantine_equation()">Résoudre</button>
+        <p>X = <span id="a12"></span></p>
+        <p>Y = <span id="a13"></span></p>
+      </div>
 
-        <section>
-            <h2 id="v7">Divisors of a Number</h2>
-            n <input type="number" id="n0" size="20"><br>
-            <button onclick="find_divisors()">Find divisors</button>
-            <p>The divisors of the number are: </p>
-            <p id="answer"></p>
-        </section>
+      <div class="card" id="v11">
+        <h3>Diophantine Equation (ax + by = c)</h3>
+        <input type="number" id="a15" placeholder="a">
+        <input type="number" id="a16" placeholder="b">
+        <input type="number" id="a17" placeholder="c">
+        <button onclick="find_diophantine_equation_2()">Résoudre</button>
+        <p>X = <span id="a19"></span></p>
+        <p>Y = <span id="a20"></span></p>
+      </div>
 
-                
-                
-                <section>
-                    <h2 id="v8"> Diviseur commun de deux nombres            </h2>
-                    a1 <input type="number" id="a1" size="20"><br>
-                    a2 <input type="number" id="a2" size="20"><br>
-                    <button onclick="commundivisors()"> Find the commun divisors</button>
-                    <p id="answer1"> </p>
-                </section>
+      <div class="card" id="v12">
+        <h3>Base Conversion</h3>
+        <input type="number" id="a22" placeholder="Nombre">
+        <input type="number" id="a23" placeholder="Base">
+        <button onclick="convertToBase()">Convertir</button>
+        <p><span id="tab"></span></p>
+      </div>
+    </div>
+  </main>
 
-
-                <section>
-                    <h2 id="v9">Euclidean Division</h2>
-                    a3 <input type="number" id="a3" size="20"><br>
-                    a4 <input type="number" id="a4" size="20"><br>
-                
-                    <button onclick="euclidean_division()">Euclidean Division</button>
-                    <p>The remainder of the Euclidean division is  :  <p id="a6"></p></p>                   
-                    <p>The quotient of the Euclidean division is :  <p id="a7"></p></p>                  
-                   
-                </section>
-                
-                <section>
-                    <h2 id="v10">Diophantine Equation</h2>
-                    <p>Assuming the equation is in the form ax+by=1</p>
-                    Enter a: <input type="number" id="a9" size="20"><br>
-                    Enter b: <input type="number" id="a10" size="20"><br>
-                
-                    <button onclick="find_diophantine_equation()">Diophantine Equation</button>
-                    <br><br>
-                    <p>X = <span id="a12"></span></p>
-                    <p>Y = <span id="a13"></span></p>
-                   
-                </section>
-                
-                <section>
-                    <h2 id="v11">Diophantine Equation 2</h2>
-                    <p>Assuming the equation is in the form ax+by=c</p>
-                    Enter a: <input type="number" id="a15" size="20"><br>
-                    Enter b: <input type="number" id="a16" size="20"><br>
-                    Enter c: <input type="number" id="a17" size="20"><br>
-                
-                    <button onclick="find_diophantine_equation_2()">Diophantine Equation</button>
-                    <br><br>
-                    <p>X = <span id="a19"></span></p>
-                    <p>Y = <span id="a20"></span></p>                    
-                </section>
-
-
-
-                <section>
-                    <h2 id="v12">Ecriture dans une base n</h2>
-                    Enter le nombre: <input type="number" id="a22" size="20"><br>
-                    Enter la base: <input type="number" id="a23" size="20"><br>
-                    
-                
-                    <button onclick="convertToBase()">Result</button>
-                    <br><br>
-                    <p> <span id="tab"></span></p>
-                </section>
-
-
-
-                
-        
-        
-        
-        
-        
-    </section>
-        
-        
-    </body>
-    </html>
+  <!-- 🦶 FOOTER -->
+  <footer>
+    <p>&copy; <span class="year"></span> EasyMath Teens — Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

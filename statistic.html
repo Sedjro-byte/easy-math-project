@@ -1,169 +1,108 @@
-<html>
-    <head>
-        <meta src="utf-8">
-        <title>EasyMath</title>
-        <link rel="stylesheet" href="statistic.css">
-        <link rel="icon" href="logo1.bmp">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>EasyMath – Statistique</title>
+  <link rel="icon" href="logo1.bmp">
+  <link rel="stylesheet" href="statistic.css">
+  <script defer src="statistic.js"></script>
+</head>
 
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>📊 EasyMath – Statistiques</h1>
+      <p>Analyse des données et calculs statistiques pour étudiants</p>
+    </div>
+  </header>
 
-    </head>
+  <main class="container">
+    <nav class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#v1">Problème à une modalité</a></li>
+        <li><a href="#v2">Problème à modalités sous forme d’intervalle</a></li>
+        <li><a href="#v3">Combinaison</a></li>
+      </ul>
+    </nav>
 
+    <section class="content">
+      <!-- ===== Section 1 ===== -->
+      <section class="card" id="v1">
+        <h2>Problème à une modalité</h2>
+        <p>Résolution avec les modalités sous forme de nombres.</p>
 
-    <body>
-        <header>
-            <h1>Statistique </h1>
-        </header>
-        <script type="text/javascript" src="statistic.js"></script>
-        <section class="main">
-            <section>
-                1- <a href="#v1">Probleme à une modalité</a><br/>
-                2- <a href="#v2">Probleme à modalité sous forme intervalle</a><br/>
-                3- <a href="#v3">Combination</a><br/>
-                
-            </section>
+        <div class="input-group">
+          <label for="numElements">Nombre d’éléments :</label>
+          <input type="number" id="numElements" placeholder="Ex: 5">
+        </div>
 
-
-
-                        <section>
-                        <h1 id="v1">Reslution avec les modalités sous forme de nombrre</h1><br><br>
-                    
-                        
-                            <h2>Multiply Array Elements</h2>
-                            <p>Enter the number of elements:</p>
-                            <input type="number" id="numElements" placeholder="Number of Elements">
-                            <br><br>    
-                            <div id="elementInputs"></div>
-                            <br>
-                            <button onclick="calculate()">Calculate</button>    
-                            <p id="result"></p>
-                        <script>
-                            
-                            document.getElementById("numElements").addEventListener("change", function () {
-                                const numElements = parseInt(this.value);
-                                elementInputs.innerHTML = "";
-                                
-                                for (let i = 1; i <= numElements; i++) {
-                                    const input = document.createElement("input");
-                                    input.type = "number";
-                                    input.id = `element${i}`;
-                                    input.placeholder = `Element ${i}`;
-                                    elementInputs.appendChild(input);
-                                }
-                                elementInputs.appendChild(document.createElement("br"));
-                            });
-                            
-                            
-                            </script>   
-
-
-                
-
-                        
-                <h2>Times 10 Array Elements</h2>    
-                <div id="eI"></div>
-                <br>
-                <button onclick="calculates()">Calculate</button>
-                <p id="results"></p>
-            <script>
-
-                document.getElementById("numElements").addEventListener("change", function () {
-                    const numElements = parseInt(this.value);
-                    eI.innerHTML = "";
-
-                    for (let i = 1; i <= numElements; i++) {
-                        const input = document.createElement("input");
-                        input.type = "number";
-                        input.id = `element0${i}`;
-                        input.placeholder = `Element ${i}`;
-                        eI.appendChild(input);
-                    }
-                    eI.appendChild(document.createElement("br"));
-                });
-
-
-            </script>
-
-
-
-
-               <button onclick="multiplyArray()"> Calculate</button><br><br>
-               <p> Effectif total <span id="T"></span></p><br>
-               <p> Effectifs cumulés <span id="nicumule"></span></p><br><br>
-               <p> Frequence <span id="freq"></span></p><br><br>
-               <p> Frequence cumulés <span id="freqcumule"></span></p><br>
-               <p> Effectif en degret <span id="effdegret"></span></p><br>
-               <p> Modalité * Effectifs <span id="nici"></span></p><br>
-               <p> Somme des nici <span id="k1"></span></p><br>
-               <p> Moyenne des nici <span id="moy"></span></p><br>
-               <p>  nicici <span id="nicici"></span></p><br>
-               <p> Somme des nicici <span id="k2"></span></p><br>
-               <p> Variance <span id="variance"></span></p><br>
-               <p> Ecart type <span id="ec"></span></p><br>
-               
-            
-            </section>
-
-            <section>
-                <h1 id="v2">Resolution avec les modalites sous forme d'intervalles</h1><br><br>
-                <p>Supposons les modalités d'intervalle de la forme [a,b[</p><br>
-                Entrer a     :<textarea  id="modalite0" ></textarea>
-                Entrer b    :<textarea  id="modalite1" ></textarea><br><br>
-               Entrer les effectifs   :<textarea  id="effectifss" ></textarea><br><br>
-               <button onclick="intervalle()"> Calculate</button><br><br>
-               <p> Effectif total <span id="Ts"></span></p><br>
-               <p> Effectifs cumulés <span id="nicumules"></span></p><br><br>
-               <p> Frequence <span id="freqs"></span></p><br><br>
-               <p> Frequence cumulés <span id="freqcumules"></span></p><br>
-               <p> Effectif en degret <span id="effdegrets"></span></p><br>
-               <p> Modalité * Effectifs <span id="nicis"></span></p><br>
-               <p> Somme des nici <span id="k1s"></span></p><br>
-               <p> Moyenne des nici <span id="moys"></span></p><br>
-               <p>  nicici <span id="nicicis"></span></p><br>
-               <p> Somme des nicici <span id="k2s"></span></p><br>
-               <p> Variance <span id="variances"></span></p><br>
-               <p> Ecart type <span id="ecs"></span></p><br>
-               
-
-       
-    <section>
-        <h2>Multiply Array Elements</h2>
-        <p>Enter the number of elements:</p>
-        <input type="number" id="numElements" placeholder="Number of Elements">
-        <br><br>
-
-        <div id="elementInputs"></div>
-        <br>
-        <button onclick="calculate()">Calculate</button>
-
+        <div id="elementInputs" class="dynamic-inputs"></div>
+        <button onclick="calculate()">Calculer</button>
         <p id="result"></p>
+
+        <hr>
+        <h3>Autres calculs</h3>
+        <button onclick="multiplyArray()">Effectuer les calculs statistiques</button>
+
+        <div class="results">
+          <p>Effectif total : <span id="T"></span></p>
+          <p>Effectifs cumulés : <span id="nicumule"></span></p>
+          <p>Fréquences : <span id="freq"></span></p>
+          <p>Fréquences cumulées : <span id="freqcumule"></span></p>
+          <p>Effectif en degrés : <span id="effdegret"></span></p>
+          <p>Modalité × Effectifs : <span id="nici"></span></p>
+          <p>Somme des nici : <span id="k1"></span></p>
+          <p>Moyenne : <span id="moy"></span></p>
+          <p>nic² : <span id="nicici"></span></p>
+          <p>Somme des nic² : <span id="k2"></span></p>
+          <p>Variance : <span id="variance"></span></p>
+          <p>Écart type : <span id="ec"></span></p>
+        </div>
+      </section>
+
+      <!-- ===== Section 2 ===== -->
+      <section class="card" id="v2">
+        <h2>Problème à modalités sous forme d’intervalle</h2>
+        <p>Supposons les modalités d’intervalle de la forme [a, b[</p>
+
+        <div class="input-group">
+          <label for="modalite0">Entrer les bornes inférieures (a) :</label>
+          <textarea id="modalite0" placeholder="Ex: 0, 10, 20"></textarea>
+        </div>
+
+        <div class="input-group">
+          <label for="modalite1">Entrer les bornes supérieures (b) :</label>
+          <textarea id="modalite1" placeholder="Ex: 10, 20, 30"></textarea>
+        </div>
+
+        <div class="input-group">
+          <label for="effectifss">Entrer les effectifs :</label>
+          <textarea id="effectifss" placeholder="Ex: 4, 6, 8"></textarea>
+        </div>
+
+        <button onclick="intervalle()">Calculer</button>
+
+        <div class="results">
+          <p>Effectif total : <span id="Ts"></span></p>
+          <p>Effectifs cumulés : <span id="nicumules"></span></p>
+          <p>Fréquences : <span id="freqs"></span></p>
+          <p>Fréquences cumulées : <span id="freqcumules"></span></p>
+          <p>Effectif en degrés : <span id="effdegrets"></span></p>
+          <p>Modalité × Effectifs : <span id="nicis"></span></p>
+          <p>Somme des nici : <span id="k1s"></span></p>
+          <p>Moyenne : <span id="moys"></span></p>
+          <p>nic² : <span id="nicicis"></span></p>
+          <p>Somme des nic² : <span id="k2s"></span></p>
+          <p>Variance : <span id="variances"></span></p>
+          <p>Écart type : <span id="ecs"></span></p>
+        </div>
+      </section>
     </section>
+  </main>
 
-    <script>
-
-        document.getElementById("numElements").addEventListener("change", function () {
-            const numElements = parseInt(this.value);
-            elementInputs.innerHTML = "";
-
-            for (let i = 1; i <= numElements; i++) {
-                const input = document.createElement("input");
-                input.type = "number";
-                input.id = `element${i}`;
-                input.placeholder = `Element ${i}`;
-                elementInputs.appendChild(input);
-            }
-            elementInputs.appendChild(document.createElement("br"));
-        });
-    </script>
-
-
-
-
-            </section>
-
-        
-    </body>
-
-
-
-
+  <footer>
+    <p>© 2025 EasyMath – Tous droits réservés.</p>
+  </footer>
+</body>
 </html>

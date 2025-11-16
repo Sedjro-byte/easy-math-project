@@ -1,93 +1,176 @@
-h2{
-    border: solid;
-    border-width: 50%;
-    /* color: blueviolet; */
-    background-color: bisque;
-    text-align: center;
-    border-radius: 4%;
-}
-.title{
-    border-top: dashed 10px;
-    border-bottom: dashed 10px;
-    border-color: #333;
-    border-radius: 50%;
-    text-align: center;
-    background: linear-gradient(45deg, red, yellow, green, blue);
-    padding: 10px;
-    /* margin: 50px; */
+/* -------- GLOBAL -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-    background: linear-gradient(45deg, red, yellow, green, blue);
-    /* border: dashed 10px; */
-    width: 90%;
-    padding: 10px;
-    left:3%;
-    /* right: 5%; */
-    height: 100px;
-    position:  fixed;
-    top:0;
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
-    border: outset 5px;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6f8ff, #eaf1ff);
+  color: #222;
+  min-height: 100vh;
 }
-header img{
-    width: 90px;
-    height: 100px;
-    position: absolute;
-    top: 10px;
-    left: 85%;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
-    
-} 
+
+/* -------- HEADER -------- */
+header {
+  background: linear-gradient(90deg, #007bff, #00c3ff);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 60px;
+  border-radius: 50%;
+}
 
 nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-    text-decoration: none;
-    font-family:Arial, Helvetica, sans-serif ;
-    color: blue;
-    font-weight: bold;
-    
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.summary{
-    background: linear-gradient(45deg, red, yellow, green, blue);
-    border-top: dashed 10px;
-    border-bottom: dashed 10px;
-    border-color: #333;
-    padding: 50px;
-    margin: 50px;
-    border-top-left-radius:10%;
-    border-bottom-right-radius: 10%;
-
+nav a:hover, nav a.active {
+  text-decoration: underline;
 }
 
-.solution{
-    background: linear-gradient(45deg, red, yellow, green, blue);
-    border-top: dashed 10px;
-    border-bottom: dashed 10px;
-    border-color: #333;
-    padding: 50px;
-    margin: 50px;
+/* -------- HERO -------- */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
 }
-.solution section{
-    border-top: dashed 10px;
-    border-bottom: dashed 10px;
-    background: linear-gradient(45deg, red, yellow, green, blue);
-    padding: 50px;
-    margin: 50px;
-    border-radius:10%;
+
+.hero h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
-body{
-    background: #333;
-    padding-top: 200px;
+
+/* -------- SUMMARY -------- */
+.summary {
+  text-align: center;
+  padding: 2rem;
+}
+
+.summary .btn {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 0.5rem;
+  transition: 0.3s;
+}
+
+.summary .btn.secondary {
+  background: #00c3ff;
+}
+
+.summary .btn:hover {
+  opacity: 0.8;
+}
+
+/* -------- CALCULATORS -------- */
+main.calculators {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+main h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.card input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.card button {
+  background: #00c3ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #009fe3;
+}
+
+.card .result {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* -------- FOOTER -------- */
+footer {
+  text-align: center;
+  background: #007bff;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
